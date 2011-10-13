@@ -1,4 +1,8 @@
-Version 0.3 (2011-??-??)
+development branch
+	- fixed issue #1 library only supports literals, not columns:  http://mysqludf.lighthouseapp.com/projects/71827/tickets/1-library-only-supports-literals-not-columns
+		Thanks to RS and Galen Wright-Watson for the bug report and Galen for the patch.
+
+Version 0.3 (2011-03-15)
 	- added str_srand function
 	- fixed buffer overrun vulnerabilities
 	- updated str_numtowords to support 128-bit integers (Note: the largest integer that can be passed to a MySQL UDF depends on the size of the system's long long int type, generally 64 bits.)

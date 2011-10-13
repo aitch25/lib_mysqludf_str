@@ -5,6 +5,9 @@
 	Copyright © 2007  Claudio Cherubino <claudiocherubino@gmail.com>
 	web: http://www.mysqludf.org/lib_mysqludf_str/
 
+	Contributions by:
+		Galen Wright-Watson <https://github.com/outis>
+
 	This library is free software; you can redistribute it and/or
 	modify it under the terms of the GNU Lesser General Public
 	License as published by the Free Software Foundation; either
