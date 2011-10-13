@@ -270,6 +270,11 @@ char *str_numtowords(UDF_INIT *initid, UDF_ARGS *args,
 
 	static const char *const tens[] = {"twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"};
 
+	st_char_vector *vec;
+	long long value;
+	int part_stack[14];
+	int *part_ptr;
+
 	if (args->args[0] == NULL) {
 		result = NULL;
 		*res_length = 0;
@@ -277,12 +282,11 @@ char *str_numtowords(UDF_INIT *initid, UDF_ARGS *args,
 		return result;
 	}
 
-	st_char_vector *vec = (st_char_vector *) initid->ptr;
+	vec = (st_char_vector *) initid->ptr;
 
-	long long value = *((long long *) args->args[0]);
+	value = *((long long *) args->args[0]);
 
-	int part_stack[14];
-	int *part_ptr = part_stack;
+	part_ptr = part_stack;
 
 	assert(char_vector_length(vec) == 0);
 
@@ -428,6 +432,7 @@ char *str_rot13(UDF_INIT *initid, UDF_ARGS *args,
 			char *null_value, char *error)
 {
 	int i, cod_ascii;
+	const char *s;
 
 	if (args->args[0] == NULL) {
 		result = NULL;
@@ -437,7 +442,7 @@ char *str_rot13(UDF_INIT *initid, UDF_ARGS *args,
 	}
 
 	// s will contain the user-supplied argument
-	const char *s = args->args[0];
+	s = args->args[0];
 
 	if (initid->ptr != NULL)
 	{
@@ -677,6 +682,10 @@ char *str_translate(UDF_INIT *initid, UDF_ARGS *args,
 			char *null_value, char *error)
 {
 	int i, j;
+	const char *subject;
+	const char *src;
+	unsigned long src_length;
+	const char *dst;
 
 	if (args->args[0] == NULL || args->args[1] == NULL || args->args[2] == NULL) {
 		result = NULL;
@@ -686,14 +695,14 @@ char *str_translate(UDF_INIT *initid, UDF_ARGS *args,
 	}
 
 	// subject will contain the string to be translated
-	const char *subject = args->args[0];
+	subject = args->args[0];
 
 	// src will contain the string to be translated
-	const char *src = args->args[1];
-	unsigned long src_length = args->lengths[1];
+	src = args->args[1];
+	src_length = args->lengths[1];
 
 	// dst will contain the string to be translated
-	const char *dst = args->args[2];
+	dst = args->args[2];
 
 	if (initid->ptr != NULL)
 	{
