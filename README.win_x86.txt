@@ -1,4 +1,4 @@
-This is a build of version 0.3 of lib_mysqludf_str for MySQL 5.1+ and 32-bit
+This is a build of version 0.3 of lib_mysqludf_str for 32-bit MySQL 5.1+ and
 Windows XP SP3 or later. It is licensed under the terms of the LGPL
 version 2.1 or later, the exact text of which is located in COPYING.
 
@@ -10,8 +10,7 @@ INSTALLATION
 ================================================================================
 To install the lib_mysqludf_str UDFs:
 
- 1. Make sure that you are running 32-bit Windows and that you have installed
-    the 32-bit build of MySQL 5.1 or later.
+ 1. Make sure that you have installed the 32-bit build of MySQL 5.1 or later.
 
     Note: The lib_mysqludf_str.dll binary has only been tested with MySQL versions
     5.5 and 5.1, but should work with MySQL 5.0 as well. It is, however,
