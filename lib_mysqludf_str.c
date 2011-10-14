@@ -49,6 +49,7 @@
 
 #include "config.h"
 #include "char_vector.h"
+#include "string_utils.h"
 
 #ifdef __WIN__
 #define DLLEXP __declspec(dllexport)
@@ -151,7 +152,7 @@ my_bool lib_mysqludf_str_info_init(UDF_INIT *initid, UDF_ARGS *args, char *messa
 {
 	if (args->arg_count != 0)
 	{
-		strncpy(message, "No arguments allowed (udf: lib_mysqludf_str_info)", MYSQL_ERRMSG_SIZE);
+		x_strlcpy(message, "No arguments allowed (udf: lib_mysqludf_str_info)", MYSQL_ERRMSG_SIZE);
 		return 1;
 	}
 
@@ -221,7 +222,7 @@ my_bool str_numtowords_init(UDF_INIT *initid, UDF_ARGS *args, char *message)
 	vec = char_vector_alloc();
 	if (vec == NULL)
 	{
-		strncpy(message, "char_vector_alloc() failed", MYSQL_ERRMSG_SIZE);
+		x_strlcpy(message, "char_vector_alloc() failed", MYSQL_ERRMSG_SIZE);
 		return 1;
 	}
 
@@ -624,7 +625,7 @@ my_bool str_translate_init(UDF_INIT *initid, UDF_ARGS *args, char *message)
 		snprintf(message, MYSQL_ERRMSG_SIZE, "wrong argument type: str_translate requires three string arguments (subject, srcchar, dstchar).");
 		return 1;
 	} else if (args->lengths[1] != args->lengths[2]) {
-		strncpy(message,"str_translate(subject, srcchar, dstchar) requires srcchar and dstchar to have the same length", MYSQL_ERRMSG_SIZE);
+		x_strlcpy(message, "str_translate(subject, srcchar, dstchar) requires srcchar and dstchar to have the same length", MYSQL_ERRMSG_SIZE);
 		return 1;
 	}
 
@@ -979,7 +980,7 @@ my_bool str_xor_init(UDF_INIT *initid, UDF_ARGS *args, char *message)
 	if (args->arg_type[0] != STRING_RESULT 
 			|| args->arg_type[1] != STRING_RESULT)
 	{
-		strncpy(message, "wrong argument type: str_xor requires two string arguments", MYSQL_ERRMSG_SIZE);
+		x_strlcpy(message, "wrong argument type: str_xor requires two string arguments", MYSQL_ERRMSG_SIZE);
 		return 1;
 	}
 
