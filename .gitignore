@@ -3,10 +3,10 @@
 /_old*
 /_ref
 /autom4te.cache
-/Debug
-/ipch
-/Release
-/x64
+Debug
+ipch
+Release
+x64
 *.la
 *.lo
 *.opensdf
