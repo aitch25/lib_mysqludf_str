@@ -3,7 +3,7 @@ Windows XP SP3 or later. It is licensed under the terms of the LGPL
 version 2.1 or later, the exact text of which is located in COPYING.
 
 All source code for this project is downloadable from GitHub:
-https://github.com/dtrebbien/lib_mysqludf_str
+https://github.com/mysqludf/lib_mysqludf_str/
 
 
 INSTALLATION
