@@ -8,7 +8,7 @@ lib_LTLIBRARIES = lib_mysqludf_str.la
 ### Source files used by this project.  Note the prefix to SOURCES is the
 ### target library.
 ###
-lib_mysqludf_str_la_SOURCES = char_vector.c char_vector.h lib_mysqludf_str.c
+lib_mysqludf_str_la_SOURCES = lib_mysqludf_str.c char_vector.c x_strlcpy.c
 
 ###
 ### This defines the CFLAGS that are passed to the compiler.  The variables
