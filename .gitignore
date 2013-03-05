@@ -9,14 +9,16 @@ Release
 x64
 *.la
 *.lo
+*.o
 *.opensdf
 *.sdf
 *.suo
 *.vcxproj.user
+Makefile
 /aclocal.m4
 /config.h
 /config.log
 /config.status
-Makefile
 /stamp-h1
 !/tests/string_utils_test/Makefile
+/tests/string_utils_test/string_utils_test
