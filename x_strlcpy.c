@@ -1,12 +1,13 @@
 /* -*- coding: utf-8; tab-width: 2; c-basic-offset: 2; indent-tabs-mode: t -*- */
 
-// This code and all comments, written by Daniel Trebbien, are hereby entered into the Public Domain by their author.
+/* This code and all comments, written by Daniel Trebbien, are hereby entered into the Public Domain by their author. */
 
-#include <assert.h>
 #include <string.h>
 
 #include "string_utils.h"
 
+/* This implementation is machine-verified:
+   https://github.com/dtrebbien/verlibc/blob/daea83474b36dc251751d100d2ba347d1aa906d6/src/string/strlcpy.c */
 size_t x_strlcpy(char *__restrict dest, const char *__restrict src, size_t dest_len)
 {
 	if (dest_len == 0) {
@@ -14,17 +15,15 @@ size_t x_strlcpy(char *__restrict dest, const char *__restrict src, size_t dest_
 	} else {
 		char *const dest_str_end = dest + dest_len - 1;
 		char *__restrict d = dest;
+		const char *__restrict s = src;
 
-		while (d != dest_str_end)
-		{
-			if ((*d++ = *src++) == '\0') {
-				assert(*(src - 1) == '\0');
-				assert(*(d - 1) == '\0');
+		while (d != dest_str_end) {
+			if ((*d++ = *s++) == '\0') {
 				return (d - 1 - dest);
 			}
 		}
 
 		*d = '\0';
-		return (dest_len - 1) + strlen(src);
+		return (dest_len - 1) + strlen(s);
 	}
 }
