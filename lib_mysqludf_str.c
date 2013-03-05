@@ -1,7 +1,7 @@
 /* -*- coding: utf-8; tab-width: 2; c-basic-offset: 2; indent-tabs-mode: t -*- */
 /*
 	lib_mysqludf_str - a library of functions to work with strings
-	Copyright © 2011  Daniel Trebbien <dtrebbien@gmail.com>
+	Copyright © 2013  Daniel Trebbien <dtrebbien@gmail.com>
 	Copyright © 2007  Claudio Cherubino <claudiocherubino@gmail.com>
 	web: http://www.mysqludf.org/lib_mysqludf_str/
 
@@ -25,7 +25,6 @@
 
 #include <ctype.h>
 #include <limits.h>
-#include <malloc.h>
 #include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
