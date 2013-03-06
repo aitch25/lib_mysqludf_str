@@ -2,6 +2,7 @@
 .libs/
 /_old*
 /_ref
+.DS_Store
 /autom4te.cache
 Debug
 ipch
