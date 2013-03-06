@@ -5,7 +5,7 @@ AC_PREREQ(2.59)
 # These can later be referenced in the code as PACKAGE_VERSION,... and
 # in the Makefile.am as VERSION
 #
-AC_INIT(lib_mysqludf_str, 0.3, dtrebbien@gmail.com)
+AC_INIT(lib_mysqludf_str, 0.4, dtrebbien@gmail.com)
 
 AC_CONFIG_MACRO_DIR([m4])
 AC_CONFIG_AUX_DIR(config)
@@ -39,7 +39,7 @@ AX_LIB_MYSQL(,,AC_MSG_ERROR("Can't find mysql library" ))
 #
 #****** Note: config.h can CONFLICT with my_config.h.
 #
-AM_CONFIG_HEADER(config.h)
+AC_CONFIG_HEADERS(config.h)
 
 AC_CHECK_LIB(dl,dlopen,AC_DEFINE(HAVE_DLOPEN,1,[Have dlopen()]))
 
