@@ -10,8 +10,6 @@ AC_INIT(lib_mysqludf_str, 0.3, dtrebbien@gmail.com)
 AC_CONFIG_MACRO_DIR([m4])
 AC_CONFIG_AUX_DIR(config)
 
-m4_include(config/ax_lib_mysql.m4)
-
 # Initialize automake
 AM_INIT_AUTOMAKE
 
