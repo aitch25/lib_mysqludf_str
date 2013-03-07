@@ -21,5 +21,7 @@ Makefile
 /config.log
 /config.status
 /stamp-h1
+!/tests/lib_mysqludf_str_test/Makefile
+/tests/lib_mysqludf_str_test/lib_mysqludf_str_test
 !/tests/string_utils_test/Makefile
 /tests/string_utils_test/string_utils_test

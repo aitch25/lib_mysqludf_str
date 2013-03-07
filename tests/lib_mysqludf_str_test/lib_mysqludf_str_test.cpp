@@ -1,6 +1,6 @@
 /* -*- coding: utf-8; tab-width: 2; c-basic-offset: 2; indent-tabs-mode: t -*- */
 /**
- * Copyright 2011 Daniel Trebbien
+ * Copyright 2013 Daniel Trebbien
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -63,6 +63,7 @@ static char * getpass(const char *prompt) throw()
 #include <unistd.h>
 #endif
 
+#define BOOST_TEST_DYN_LINK 1
 #define BOOST_TEST_MODULE "lib_mysqludf_str tests"
 #include <boost/test/unit_test.hpp>
 
@@ -628,7 +629,7 @@ BOOST_AUTO_TEST_CASE(test_lib_mysqludf_str_info)
 
 			MYSQL_ROW prow = mysql_fetch_row(pres);
 			BOOST_REQUIRE_NE(prow, static_cast<MYSQL_ROW>(NULL));
-			BOOST_CHECK_EQUAL(prow[0], "lib_mysqludf_str version 0.3");
+			BOOST_CHECK_EQUAL(prow[0], "lib_mysqludf_str version 0.4");
 		}
 	}
 }

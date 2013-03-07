@@ -50,9 +50,9 @@ This assumes that Windows is 64-bit.
     COPYING, installdb.win.sql, lib_mysqludf_str.dll, lib_mysqludf_str.pdb, README.win_x86.txt, and
     uninstalldb.sql. The name should be "lib_mysqludf_str-$(PACKAGE_VERSION)_x86".
 
-  * Upload the two ZIP archives to www.mysqludf.org/lib_mysqludf_str/
-
   * Sign the two ZIP archives with GPG.
+
+  * Upload the two ZIP archives and signatures to www.mysqludf.org/lib_mysqludf_str/
 
 
 ON LINUX
