@@ -56,7 +56,7 @@ The shared object (SO file) must be copied to MySQL's plugin directory, which ca
 To then load the functions:
 
 <pre>
-mysql -u root -p < installdb.sql
+mysql -u root -p &lt; installdb.sql
 </pre>
 
 ## Uninstallation
@@ -360,7 +360,7 @@ returns
 yields a random string containing 5 bytes.
 
 <pre>
-mysql> SELECT LENGTH(str_srand(5)) as len;
+mysql&gt; SELECT LENGTH(str_srand(5)) as len;
 +-----+
 | len |
 +-----+
