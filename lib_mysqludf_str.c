@@ -313,6 +313,7 @@ char *str_numtowords(UDF_INIT *initid, UDF_ARGS *args,
 	while (part_ptr > part_stack)
 	{
 		int p = *--part_ptr;
+		const int pWasNonzero = p != 0;
 
 		if (p >= 100)
 		{
@@ -342,7 +343,7 @@ char *str_numtowords(UDF_INIT *initid, UDF_ARGS *args,
 			char_vector_append(vec, STR_COMMA_LENGTH(" "));
 		}
 
-		if (p && part_ptr > part_stack)
+		if (pWasNonzero && part_ptr > part_stack)
 		{
 			char_vector_strcat(vec, powers[part_ptr - part_stack - 1]);
 			char_vector_append(vec, STR_COMMA_LENGTH(" "));
