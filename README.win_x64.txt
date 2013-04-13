@@ -1,4 +1,4 @@
-This is a build of version 0.4 of lib_mysqludf_str for MySQL 5.1+ and 64-bit
+This is a build of version 0.5 of lib_mysqludf_str for MySQL 5.1+ and 64-bit
 Windows XP SP3 or later. It is licensed under the terms of the LGPL
 version 2.1 or later, the exact text of which is located in COPYING.
 
@@ -38,7 +38,7 @@ To install the lib_mysqludf_str UDFs:
     +------------------------------+
     | lib_mysqludf_str_info()      |
     +------------------------------+
-    | lib_mysqludf_str version 0.4 |
+    | lib_mysqludf_str version 0.5 |
     +------------------------------+
 
 

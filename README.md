@@ -19,8 +19,8 @@ Use `lib_mysqludf_str_info()` to obtain information about the currently-installe
 
 Binaries are provided for 32-bit and 64-bit MySQL, Intel/x86 architecture:
 
-* [32-bit `lib_mysqludf_str` 0.4](https://github.com/mysqludf/lib_mysqludf_str/blob/downloads/Downloads/lib_mysqludf_str-0.4-x86.zip?raw=true) ([sig](https://raw.github.com/mysqludf/lib_mysqludf_str/downloads/Downloads/lib_mysqludf_str-0.4-x86.zip.asc))
-* [64-bit `lib_mysqludf_str` 0.4](https://github.com/mysqludf/lib_mysqludf_str/blob/downloads/Downloads/lib_mysqludf_str-0.4-x64.zip?raw=true) ([sig](https://raw.github.com/mysqludf/lib_mysqludf_str/downloads/Downloads/lib_mysqludf_str-0.4-x64.zip.asc))
+* [32-bit `lib_mysqludf_str` 0.5](https://github.com/mysqludf/lib_mysqludf_str/blob/downloads/Downloads/lib_mysqludf_str-0.5-x86.zip?raw=true) ([sig](https://raw.github.com/mysqludf/lib_mysqludf_str/downloads/Downloads/lib_mysqludf_str-0.5-x86.zip.asc))
+* [64-bit `lib_mysqludf_str` 0.5](https://github.com/mysqludf/lib_mysqludf_str/blob/downloads/Downloads/lib_mysqludf_str-0.5-x64.zip?raw=true) ([sig](https://raw.github.com/mysqludf/lib_mysqludf_str/downloads/Downloads/lib_mysqludf_str-0.5-x64.zip.asc))
 
 Please verify the GPG signature. If you are not used to the command-line interface of `gpg`, an excellent GPG GUI for Windows is [GnuPT](http://www.gnupt.de/site/index.php?option=com_content&view=article&id=73&Itemid=529).
 
@@ -33,7 +33,7 @@ To complete the installation, refer to [`README.win_x86.txt`](https://github.com
 `lib_mysqludf_str` uses an Autoconf build system, so the standard `./configure` and `make` procedure applies:
 
 <pre>
-./configure --prefix=/usr/local/lib_mysqludf_str-0.4
+./configure --prefix=/usr/local/lib_mysqludf_str-0.5
 make && make install
 </pre>
 
@@ -399,6 +399,6 @@ yields this result:
 +------------------------------+
 | info                         |
 +------------------------------+
-| lib_mysqludf_str version 0.4 |
+| lib_mysqludf_str version 0.5 |
 +------------------------------+
 </pre>
