@@ -1,5 +1,9 @@
 development branch
 
+Version 0.5 (2013-04-13)
+	- fixed the issue that str_numtowords() returned the wrong result for 100000
+		Thanks to Bernard Sang for the bug report.
+
 Version 0.4 (2013-03-06)
 	- fixed issue #1 library only supports literals, not columns:  http://mysqludf.lighthouseapp.com/projects/71827/tickets/1-library-only-supports-literals-not-columns
 		Thanks to RS and Galen Wright-Watson for the bug report and Galen for the patch.

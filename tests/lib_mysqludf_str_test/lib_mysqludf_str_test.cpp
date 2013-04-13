@@ -141,6 +141,25 @@ BOOST_AUTO_TEST_CASE(test_str_numtowords)
 		}
 	}
 
+	// Check for regressions of the bug reported by Bernard Sang where the result was incorrect
+	// for 100000 (should be "one hundred thousand", but was "one hundred").
+	if (mysql_query(pconn, "SELECT str_numtowords(100000)") != 0) {
+		BOOST_ERROR(mysql_error(pconn));
+	} else {
+		MYSQL_RES *pres = mysql_store_result(pconn);
+		if (pres == NULL) {
+			BOOST_ERROR(mysql_error(pconn));
+		} else {
+			BOOST_SCOPE_EXIT( (pres) ) {
+				mysql_free_result(pres);
+			} BOOST_SCOPE_EXIT_END
+
+			MYSQL_ROW prow = mysql_fetch_row(pres);
+			BOOST_REQUIRE_NE(prow, static_cast<MYSQL_ROW>(NULL));
+			BOOST_CHECK_EQUAL(static_cast<const char *>(prow[0]), "one hundred thousand");
+		}
+	}
+
 	if (mysql_query(pconn, "CREATE TEMPORARY TABLE numbers (id INT NOT NULL AUTO_INCREMENT, num INT, PRIMARY KEY (id))") != 0) {
 		BOOST_ERROR(mysql_error(pconn));
 	}
@@ -629,7 +648,7 @@ BOOST_AUTO_TEST_CASE(test_lib_mysqludf_str_info)
 
 			MYSQL_ROW prow = mysql_fetch_row(pres);
 			BOOST_REQUIRE_NE(prow, static_cast<MYSQL_ROW>(NULL));
-			BOOST_CHECK_EQUAL(prow[0], "lib_mysqludf_str version 0.4");
+			BOOST_CHECK_EQUAL(prow[0], "lib_mysqludf_str version 0.5");
 		}
 	}
 }

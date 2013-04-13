@@ -5,7 +5,7 @@ This is a checklist of the steps to follow when preparing a new release.
 
   * Update ChangeLog.
 
-  * Update lib_mysqludf_str.html.
+  * Update README.md.
 
   * Update the package version that is passed to AC_INIT in configure.ac.
 
@@ -43,11 +43,11 @@ This assumes that Windows is 64-bit.
   * Commit any changes in the working tree. Push all commits to GitHub.
 
   * Prepare a ZIP of the Release/x64 build. The ZIP should contain a copy of
-    COPYING, installdb.win.sql, lib_mysqludf_str.dll, lib_mysqludf_str.pdb, README.win_x64.txt, and
+    COPYING, installdb.win.sql, lib_mysqludf_str.dll, README.win_x64.txt, and
     uninstalldb.sql. The name should be "lib_mysqludf_str-$(PACKAGE_VERSION)_x64".
 
   * Prepare a ZIP of the Release/Win32 build. The ZIP should contain a copy of
-    COPYING, installdb.win.sql, lib_mysqludf_str.dll, lib_mysqludf_str.pdb, README.win_x86.txt, and
+    COPYING, installdb.win.sql, lib_mysqludf_str.dll, README.win_x86.txt, and
     uninstalldb.sql. The name should be "lib_mysqludf_str-$(PACKAGE_VERSION)_x86".
 
   * Sign the two ZIP archives with GPG.
