@@ -2,16 +2,16 @@ MySQL already supports a [number of string functions natively](http://dev.mysql.
 
 The following functions are currently supported in the `lib_mysqludf_str` library:
 
- 1. `str_numtowords` – converts a number to a string.
- 2. `str_rot13` – performs the ROT13 transform on a string.
- 3. `str_shuffle` – randomly shuffles the characters of a string.
- 4. `str_translate` – replaces characters contained in srcchar with the corresponding ones in dstchar.
- 5. `str_ucfirst` – uppercases the first character of a string.
- 6. `str_ucwords` – transforms to uppercase the first character of each word in a string.
- 7. `str_xor` – performs a byte-wise exclusive OR (XOR) of two strings.
- 8. `str_srand` – generates a string of cryptographically secure pseudo-random bytes.
+ - [`str_numtowords`](#str_numtowords) – converts a number to a string.
+ - [`str_rot13`](#str_rot13) – performs the ROT13 transform on a string.
+ - [`str_shuffle`](#str_shuffle) – randomly shuffles the characters of a string.
+ - [`str_translate`](#str_translate) – replaces characters contained in srcchar with the corresponding ones in dstchar.
+ - [`str_ucfirst`](#str_ucfirst) – uppercases the first character of a string.
+ - [`str_ucwords`](#str_ucwords) – transforms to uppercase the first character of each word in a string.
+ - [`str_xor`](#str_xor) – performs a byte-wise exclusive OR (XOR) of two strings.
+ - [`str_srand`](#str_srand) – generates a string of cryptographically secure pseudo-random bytes.
 
-Use `lib_mysqludf_str_info()` to obtain information about the currently-installed version of `lib_mysqludf_str`.
+Use [`lib_mysqludf_str_info()`](#lib_mysqludf_str_info) to obtain information about the currently-installed version of `lib_mysqludf_str`.
 
 ## Installation
 
