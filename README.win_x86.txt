@@ -16,7 +16,8 @@ To install the lib_mysqludf_str UDFs:
     5.6, but should work with MySQL 5.5, 5.1 and 5.0 as well. It is, however,
     incompatible with MySQL 3.23/4.0/4.1.
 
- 2. Look for a file named msvcr110.dll in your System32 folder. If this file is
+ 2. Look for a file named msvcr110.dll in your System32 folder (on a 64-bit Windows
+    machine, look for this file in the SysWOW64 folder instead). If this file is
     not present, then install the latest Visual C++ Redistributable for Visual Studio 2012
     vcredist_x86.exe:
     http://www.microsoft.com/en-us/download/details.aspx?id=30679
@@ -65,6 +66,20 @@ TROUBLESHOOTING
     +---------------+-----------------------------------------------------+
 
     If it's not, then copy lib_mysqludf_str.dll to the listed directory.
+
+  * ERROR 1126 (HY000): Can't open shared library 'lib_mysqludf_str.dll' (errno: 126 )
+
+    This error can happen when you don't have the 32-bit Visual C++ Redistributable for Visual Studio 2012
+    installed.
+
+    On a 64-bit Windows machine, look for a file named msvcr110.dll in the
+    SysWOW64 folder. You need to install vcredist_x86.exe from http://www.microsoft.com/en-us/download/details.aspx?id=30679
+
+  * ERROR 1126 (HY000): Can't open shared library 'lib_mysqludf_str.dll' (errno: 193)
+
+    This error can happen when you try to use the 32-bit version of lib_mysqludf_str
+    with a 64-bit MySQL server. Either use the 64-bit version of lib_mysqludf_str
+    or install 32-bit MySQL.
 
   * ERROR 1127 (HY000): Can't find symbol in library
 

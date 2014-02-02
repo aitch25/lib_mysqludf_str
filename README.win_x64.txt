@@ -1,6 +1,9 @@
-This is a build of version 0.5 of lib_mysqludf_str for MySQL 5.1+ and 64-bit
+This is a build of version 0.5 of lib_mysqludf_str for 64-bit MySQL 5.1+ and
 Windows XP SP3 or later. It is licensed under the terms of the LGPL
 version 2.1 or later, the exact text of which is located in COPYING.
+
+IMPORTANT NOTE: If you are running 32-bit MySQL, then you need the 32-bit version
+of lib_mysqludf_str, not the 64-bit version.
 
 All source code for this project is downloadable from GitHub:
 https://github.com/mysqludf/lib_mysqludf_str/
@@ -66,6 +69,12 @@ TROUBLESHOOTING
     +---------------+-----------------------------------------------------+
 
     If it's not, then copy lib_mysqludf_str.dll to the listed directory.
+
+  * ERROR 1126 (HY000): Can't open shared library 'lib_mysqludf_str.dll' (errno: 193)
+
+    This error can happen when you try to use the 64-bit version of lib_mysqludf_str
+    with a 32-bit MySQL server. Either use the 32-bit version of lib_mysqludf_str
+    or install 64-bit MySQL.
 
   * ERROR 1127 (HY000): Can't find symbol in library
 
