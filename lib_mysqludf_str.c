@@ -974,7 +974,7 @@ my_bool str_xor_init(UDF_INIT *initid, UDF_ARGS *args, char *message)
 
 	if (args->arg_count != 2)
 	{
-		snprintf(message, MYSQL_ERRMSG_SIZE, "wrong argument count: str_xor requires exactly two string arguments, got %d arguments.", MYSQL_ERRMSG_SIZE, args->arg_count);
+		snprintf(message, MYSQL_ERRMSG_SIZE, "wrong argument count: str_xor requires exactly two string arguments, got %d arguments.", args->arg_count);
 		return 1;
 	}
 	if (args->arg_type[0] != STRING_RESULT 
@@ -1106,7 +1106,7 @@ my_bool str_srand_init(UDF_INIT *initid, UDF_ARGS *args, char *message)
 
 	arg0 = (long long *) args->args[0];
 	if (arg0 < 0) {
-		snprintf(message, MYSQL_ERRMSG_SIZE, "wrong argument type: str_srand requires one non-negative integer argument; argument was negative (%d)", MYSQL_ERRMSG_SIZE, arg0);
+		snprintf(message, MYSQL_ERRMSG_SIZE, "wrong argument type: str_srand requires one non-negative integer argument; argument was negative");
 		return 1;
 	}
 	else if (MAX_RANDOM_BYTES < *arg0)
